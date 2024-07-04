@@ -1,38 +1,46 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #000;
 }
-nav{
+
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #ffcc00;
     height: 50px;
     font-weight: bold;
+    padding: 0 15px;
 }
-nav a{
+
+nav a {
     margin-right: 30px;
     font-size: 24px;
     color: red;
     text-decoration: none;
 }
-nav img{
+
+nav img {
     height: 24px;
     margin-left: 30px;
 }
-.menu{
+
+.menu {
     color: yellow;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 14px;
     margin-bottom: 14px;
+    text-align: center;
 }
-.container{
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,28 +49,35 @@ nav img{
     flex-wrap: wrap;
     gap: 6px;
 }
+
 .sorters {
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
     gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
 }
+
 .sorter {
     width: 15%;
+    min-width: 200px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     padding: 20px;
     margin-bottom: 20px;
 }
+
 .sorter label {
     display: block;
     margin-bottom: 10px;
-    font-weight: bold;
-    text-align: center;
     font-weight: bolder;
+    text-align: center;
     font-size: 20px;
 }
+
 .sorter button {
     margin-top: 3px;
     width: 100%;
@@ -76,13 +91,67 @@ nav img{
     margin-right: 10px;
     transition: background-color 0.3s ease;
 }
+
 .sorter button:hover {
     background-color: yellow;
 }
-.sorter button:last-child{
+
+.sorter button:last-child {
     background-color: #c90303;
     color: #fff;
 }
-.sorter button:last-child:hover{
+
+.sorter button:last-child:hover {
     background-color: #ff0000;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 1024px) {
+    .sorter {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .sorter {
+        width: calc(50% - 15px);
+    }
+    
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    nav img, nav a {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sorter {
+        width: calc(50% - 15px);  /* Alterado para 2 sorters por linha */
+        min-width: 140px;  /* Reduzido o min-width para caber melhor em telas menores */
+    }
+    
+    .menu h1 {
+        font-size: 24px;
+    }
+    
+    .sorter label {
+        font-size: 16px;  /* Reduzido o tamanho da fonte para caber melhor */
+    }
+    
+    .sorter button {
+        padding: 8px 12px;  /* Reduzido o padding dos botões */
+        font-size: 14px;  /* Reduzido o tamanho da fonte dos botões */
+    }
+    
+    nav a {
+        font-size: 20px;
+    }
+    
+    .sorters {
+        gap: 15px;  /* Reduzido o gap para um layout mais compacto */
+    }
 }
