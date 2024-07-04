@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffcc00;
+    height: 50px;
+    font-weight: bold;
+}
+nav a{
+    margin-right: 30px;
+    font-size: 24px;
+    color: red;
+    text-decoration: none;
+}
+nav img{
+    height: 24px;
+    margin-left: 30px;
+}
+.menu{
+    color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 100%;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.sorters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 30px;
+}
+.sorter {
+    width: 15%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.sorter label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.sorter button {
+    margin-top: 3px;
+    width: 100%;
+    background-color: #ffcc00;
+    font-weight: bold;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+.sorter button:hover {
+    background-color: yellow;
+}
+.sorter button:last-child{
+    background-color: #c90303;
+    color: #fff;
+}
+.sorter button:last-child:hover{
+    background-color: #ff0000;
+}

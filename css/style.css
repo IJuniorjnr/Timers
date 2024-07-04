@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #ffcc00;
+    height: 50px;
+    font-weight: bold;
+}
+nav span{
+    margin-left: 30px;
+    font-size: 24px;
+    color: red;
+}
+nav img{
+    height: 24px;
+    margin-left: 30px;
+}
+.filtro{
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+}
+.filtro button{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.sorter {
+    color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.sorter h1 {
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    height: 100%;
+    flex-wrap: wrap;
+    gap: 6px;
+    
+}
+.botao{
+    display: flex;
+    justify-content: center;
+}
+.botao button{
+    background-color: red;
+}
+.botao button:hover{
+    background-color: red;
+}
+
+.cronometro {
+    text-align: center;
+    background-color: rgb(230, 230, 230);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(111, 110, 110, 0.1);
+    margin-bottom: 5px;
+}
+
+.tempo {
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: rgb(0, 127, 57);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 120px;
+    max-width: 200px;
+}
+
+.reiniciar {
+    background-color: rgb(241, 237, 41);
+    color: black;
+}
+.filtro {
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+    flex-direction: row; /* Adicione esta linha para garantir que os botões apareçam em linha */
+}
+.filtro button {
+    min-width: 120px;
+    max-width: 200px;
+}
+
+#btnResetarTodos {
+    margin-left: 48px;
+    min-width: 120px;
+    max-width: 200px;
+}
+button:hover {
+    background-color: #28b02e;
+}
+.reiniciar:hover{
+    background-color: #ffcc00;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+  }
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+.modal button {
+    margin: 10px;
+    padding: 5px 10px;
+  }
+
+#modalCancel{
+    background-color: red;
+}
+.container {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    nav {
+        height: 40px;
+    }
+    nav span {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+    nav img {
+        height: 20px;
+        margin-left: 20px;
+    }
+    .filtro {
+        flex-direction: row;
+        align-items: center;
+    }
+    .filtro button {
+        margin: 5px 0;
+    }
+    .sorter {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .container {
+        justify-content: center;
+    }
+    .cronometro {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+    .tempo {
+        font-size: 24px;
+    }
+    button {
+        padding: 8px 16px;
+        font-size: 16px;
+        min-width: 100px;
+        max-width: 180px;
+    }
+    .filtro button {
+        min-width: 126px;
+        max-width: 180px;
+        height: 40px;
+    }
+    #btnResetarTodos {
+        margin-left: 0;
+        min-width: 126px;
+        max-width: 180px;
+    }
+    .modal-content {
+        margin: 30% auto;
+        width: 90%;
+    }
+}
+
+/* Para telas menores que 480px */
+@media (max-width: 480px) {
+    nav {
+        height: 30px;
+    }
+    nav span {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+    nav img {
+        height: 18px;
+        margin-left: 10px;
+    }
+    .filtro {
+        margin: 3px;
+    }
+    .sorter {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .container {
+        justify-content: space-around;
+    }
+    .cronometro {
+        width: 45%;
+        margin-bottom: 10px;
+    }
+    .tempo {
+        font-size: 20px;
+    }
+    button {
+        padding: 6px 12px;
+        font-size: 14px;
+        width: 136px;
+        max-width: 160px;
+    }
+    .filtro button {
+        width: 136px;
+        max-width: 160px;
+    }
+    #btnResetarTodos {
+        margin-left: 0;
+        width: 136px;
+        max-width: 160px;
+    }
+    .modal-content {
+        margin: 40% auto;
+        width: 95%;
+    }
+}
