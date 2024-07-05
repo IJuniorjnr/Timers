@@ -1,7 +1,7 @@
 class Cronometro {
     constructor(elementId) {
         this.element = document.getElementById(elementId);
-        this.tempoPadrao = 3600;
+        this.tempoPadrao = 10;
         this.tempoInicial = parseInt(localStorage.getItem(`${elementId}-tempoInicial`)) || this.tempoPadrao;
         this.timestamp = parseInt(localStorage.getItem(`${elementId}-timestamp`)) || null;
         this.emExecucao = false;
@@ -16,13 +16,31 @@ class Cronometro {
             this.iniciar();
         }
 
-        document.addEventListener("visibilitychange", () => this.handleVisibilityChange());
+        this.alarmTriggered = false;
+        this.setupAudio();
     }
 
-    handleVisibilityChange() {
-        if (!document.hidden) {
-            this.atualizarTempoDecorrido();
-            this.atualizarInterface();
+    setupAudio() {
+        this.audio = new Audio('audio/alarm.mp3'); // Substitua pelo caminho real do seu arquivo de áudio
+        this.audio.loop = false; // Faz o áudio tocar em loop
+    }
+
+    playAlarmSound() {
+        this.audio.play().catch(error => console.error('Erro ao tocar o áudio:', error));
+        this.showNotification();
+    }
+
+    stopAlarmSound() {
+        this.audio.pause();
+        this.audio.currentTime = 0; // Reinicia o áudio para o início
+    }
+
+    showNotification() {
+        if ("Notification" in window && Notification.permission === "granted") {
+            new Notification("Cronômetro Finalizado", {
+                body: "O tempo do cronômetro acabou!",
+                icon: "/path/to/your/icon.png" // Substitua pelo caminho do seu ícone
+            });
         }
     }
 
@@ -32,6 +50,12 @@ class Cronometro {
             const tempoDecorrido = now - this.timestamp;
             this.tempo = Math.max(this.tempoInicial - tempoDecorrido, 0);
             this.overtime = Math.max(tempoDecorrido - this.tempoInicial, 0);
+
+            // Verifica se o tempo acabou e toca o alarme
+            if (this.tempo <= 0 && !this.alarmTriggered) {
+                this.playAlarmSound();
+                this.alarmTriggered = true;
+            }
         } else {
             this.tempo = this.tempoInicial;
             this.overtime = 0;
@@ -53,7 +77,7 @@ class Cronometro {
         if (this.emExecucao) {
             this.atualizarTempoDecorrido();
             this.atualizarInterface();
-            requestAnimationFrame(() => this.atualizarLoop());
+            setTimeout(() => this.atualizarLoop(), 1000);
         }
     }
 
@@ -69,9 +93,11 @@ class Cronometro {
         this.overtime = 0;
         this.timestamp = null;
         this.emExecucao = false;
+        this.alarmTriggered = false;
         this.atualizarInterface();
         localStorage.removeItem(`${this.element.id}-tempoInicial`);
         localStorage.removeItem(`${this.element.id}-timestamp`);
+        this.stopAlarmSound();
     }
 
     atualizarInterface() {
@@ -126,7 +152,6 @@ class Cronometro {
         const container = document.querySelector('.container');
         const cronometros = Array.from(container.querySelectorAll('.cronometro')).filter(elem => elem.__cronometro);
         
-        // Ordenar os cronômetros
         cronometros.sort((a, b) => {
             const cronometroA = a.__cronometro;
             const cronometroB = b.__cronometro;
@@ -141,35 +166,11 @@ class Cronometro {
             }
         });
     
-        // Reposicionar os elementos no DOM
         cronometros.forEach(elem => container.appendChild(elem));
     }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const cronometros = document.querySelectorAll('[id^="cronometro-"]');
-    cronometros.forEach(elem => {
-        const cronometro = new Cronometro(elem.id);
-        elem.__cronometro = cronometro;
-    });
-
-    setInterval(Cronometro.ordenarCronometros, 5000);
-});
-
-document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) {
-        const cronometros = document.querySelectorAll('[id^="cronometro-"]');
-        cronometros.forEach(elem => {
-            const cronometro = elem.__cronometro;
-            if (cronometro && cronometro.emExecucao) {
-                cronometro.atualizarTempoDecorrido();
-                cronometro.atualizarInterface();
-            }
-        });
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
     const prefixoId = document.body.getAttribute('data-prefixo');
     const btnResetarTodos = document.getElementById('btnResetarTodos');
     const cronometros = [];
@@ -180,7 +181,14 @@ document.addEventListener('DOMContentLoaded', function () {
         cronometros.push(cronometro);
 
         const btnIniciar = document.getElementById(`btnIniciar${i}`);
-        btnIniciar.addEventListener('click', () => cronometro.iniciar());
+        btnIniciar.addEventListener('click', () => {
+            cronometro.iniciar();
+            // Enable audio context on user interaction
+            document.getElementById('alarmSound').play().then(() => {
+                document.getElementById('alarmSound').pause();
+                document.getElementById('alarmSound').currentTime = 0;
+            }).catch(error => console.log("Audio play failed:", error));
+        });
 
         const btnReiniciar = document.getElementById(`btnReiniciar${i}`);
         btnReiniciar.addEventListener('click', () => cronometro.reiniciar());
@@ -234,6 +242,19 @@ document.addEventListener('DOMContentLoaded', function () {
             cronometroElement.style.display = 'inline-block';
         }
     });
+});
+
+document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+        const cronometros = document.querySelectorAll('[id^="cronometro-"]');
+        cronometros.forEach(elem => {
+            const cronometro = elem.__cronometro;
+            if (cronometro && cronometro.emExecucao) {
+                cronometro.atualizarTempoDecorrido();
+                cronometro.atualizarInterface();
+            }
+        });
+    }
 });
 
 function showModal(message, onConfirm, onCancel) {
