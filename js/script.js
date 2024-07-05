@@ -1,7 +1,7 @@
 class Cronometro {
     constructor(elementId) {
         this.element = document.getElementById(elementId);
-        this.tempoPadrao = 10;
+        this.tempoPadrao = 3600;
         this.tempoInicial = parseInt(localStorage.getItem(`${elementId}-tempoInicial`)) || this.tempoPadrao;
         this.timestamp = parseInt(localStorage.getItem(`${elementId}-timestamp`)) || null;
         this.emExecucao = false;
