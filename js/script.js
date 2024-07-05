@@ -1,7 +1,7 @@
 class Cronometro {
     constructor(elementId) {
         this.element = document.getElementById(elementId);
-        this.tempoPadrao = 3600;
+        this.tempoPadrao = 30;
         this.tempoInicial = parseInt(localStorage.getItem(`${elementId}-tempoInicial`)) || this.tempoPadrao;
         this.timestamp = parseInt(localStorage.getItem(`${elementId}-timestamp`)) || null;
         this.emExecucao = false;
@@ -21,18 +21,28 @@ class Cronometro {
     }
 
     setupAudio() {
-        this.audio = new Audio('audio/alarm.mp3'); // Substitua pelo caminho real do seu arquivo de áudio
-        this.audio.loop = false; // Faz o áudio tocar em loop
+        try {
+            this.audio = new Audio('audio/alarm.mp3'); // Substitua pelo caminho real do seu arquivo de áudio
+            this.audio.loop = false; // Faz o áudio tocar em loop
+        } catch (error) {
+            console.error('Erro ao inicializar o áudio:', error);
+        }
     }
 
     playAlarmSound() {
-        this.audio.play().catch(error => console.error('Erro ao tocar o áudio:', error));
-        this.showNotification();
+        if (this.audio) {
+            this.audio.play().catch(error => console.error('Erro ao tocar o áudio:', error));
+            this.showNotification();
+        } else {
+            console.error('Áudio não inicializado corretamente');
+        }
     }
 
     stopAlarmSound() {
-        this.audio.pause();
-        this.audio.currentTime = 0; // Reinicia o áudio para o início
+        if (this.audio) {
+            this.audio.pause();
+            this.audio.currentTime = 0; // Reinicia o áudio para o início
+        }
     }
 
     showNotification() {
@@ -81,6 +91,10 @@ class Cronometro {
         }
     }
 
+    parar() {
+        this.emExecucao = false;
+    }
+
     reiniciar() {
         showModal("Deseja realmente reiniciar o cronômetro?", () => {
             this.resetar();
@@ -88,11 +102,11 @@ class Cronometro {
     }
 
     resetar() {
+        this.parar();
         this.tempoInicial = this.tempoPadrao;
         this.tempo = this.tempoPadrao;
         this.overtime = 0;
         this.timestamp = null;
-        this.emExecucao = false;
         this.alarmTriggered = false;
         this.atualizarInterface();
         localStorage.removeItem(`${this.element.id}-tempoInicial`);
