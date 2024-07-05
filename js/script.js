@@ -22,7 +22,7 @@ class Cronometro {
 
     setupAudio() {
         this.audio = new Audio('audio/alarm.mp3'); // Substitua pelo caminho real do seu arquivo de áudio
-        this.audio.loop = false; // Faz o áudio tocar em loop
+        this.audio.loop = true; // Faz o áudio tocar em loop
     }
 
     playAlarmSound() {
