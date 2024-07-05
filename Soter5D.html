@@ -6,7 +6,8 @@
     <title>sorter5D</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-prefixo="RC05"> <!-- Altere o valor de data-prefixo conforme necessário -->
+<body data-prefixo="RC05" data-lado="direito"> <!-- Altere o valor de data-prefixo conforme necessário -->
+    <audio id="alarmSound" src="audio/alarm.mp3"></audio>
     <nav>
         <img src="images/logo.png" alt="">
     </nav>
@@ -25,275 +26,323 @@
     
     <div class="container">
         <!-- Cronômetros -->
-        <div id="RC05-46" class="cronometro">
-            <h2>M04-56</h2>
+        <div id="RC05-01" class="cronometro">
+            <h2>M03-56</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar46">Iniciar</button>
-            <button id="btnReiniciar46" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar1">Iniciar</button>
+            <button id="btnReiniciar1" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-47" class="cronometro">
-            <h2>M04-55</h2>
+        <div id="RC05-02" class="cronometro">
+            <h2>M03-55</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar47">Iniciar</button>
-            <button id="btnReiniciar47" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar2">Iniciar</button>
+            <button id="btnReiniciar2" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-48" class="cronometro">
-            <h2>M04-54</h2>
+        <div id="RC05-03" class="cronometro">
+            <h2>M03-54</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar48">Iniciar</button>
-            <button id="btnReiniciar48" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar3">Iniciar</button>
+            <button id="btnReiniciar3" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-49" class="cronometro">
-            <h2>M04-53</h2>
+        <div id="RC05-04" class="cronometro">
+            <h2>M03-53</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar49">Iniciar</button>
-            <button id="btnReiniciar49" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar4">Iniciar</button>
+            <button id="btnReiniciar4" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-50" class="cronometro">
-            <h2>M04-52</h2>
+        <div id="RC05-05" class="cronometro">
+            <h2>M03-52</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar50">Iniciar</button>
-            <button id="btnReiniciar50" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar5">Iniciar</button>
+            <button id="btnReiniciar5" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-51" class="cronometro">
-            <h2>M04-51</h2>
+        <div id="RC05-06" class="cronometro">
+            <h2>M03-51</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar51">Iniciar</button>
-            <button id="btnReiniciar51" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar6">Iniciar</button>
+            <button id="btnReiniciar6" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-52" class="cronometro">
-            <h2>M4-28</h2>
+        <div id="RC05-07" class="cronometro">
+            <h2>M03-28</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar52">Iniciar</button>
-            <button id="btnReiniciar52" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar7">Iniciar</button>
+            <button id="btnReiniciar7" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-53"class="cronometro">
-            <h2>M04-27</h2>
+        <div id="RC05-08" class="cronometro">
+            <h2>M03-27</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar53">Iniciar</button>
-            <button id="btnReiniciar53" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar8">Iniciar</button>
+            <button id="btnReiniciar8" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-54" class="cronometro">
-            <h2>M04-26</h2>
+        <div id="RC05-09" class="cronometro">
+            <h2>M03-26</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar54">Iniciar</button>
-            <button id="btnReiniciar54" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar9">Iniciar</button>
+            <button id="btnReiniciar9" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-55" class="cronometro">
-            <h2>M04-25</h2>
+        <div id="RC05-10" class="cronometro">
+            <h2>M03-25</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar55">Iniciar</button>
-            <button id="btnReiniciar55" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar10">Iniciar</button>
+            <button id="btnReiniciar10" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-56" class="cronometro">
-            <h2>M04-20</h2>
+        <div id="RC05-11" class="cronometro">
+            <h2>M03-20</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar56">Iniciar</button>
-            <button id="btnReiniciar56" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar11">Iniciar</button>
+            <button id="btnReiniciar11" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-57" class="cronometro">
-            <h2>M04-19</h2>
+        <div id="RC05-12" class="cronometro">
+            <h2>M03-19</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar57">Iniciar</button>
-            <button id="btnReiniciar57" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar12">Iniciar</button>
+            <button id="btnReiniciar12" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-58" class="cronometro">
-            <h2>M04-18</h2>
+        <div id="RC05-13" class="cronometro">
+            <h2>M03-18</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar58">Iniciar</button>
-            <button id="btnReiniciar58" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar13">Iniciar</button>
+            <button id="btnReiniciar13" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-59" class="cronometro">
-            <h2>M04-17</h2>
+        <div id="RC05-14" class="cronometro">
+            <h2>M03-17</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar59">Iniciar</button>
-            <button id="btnReiniciar59" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar14">Iniciar</button>
+            <button id="btnReiniciar14" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-60" class="cronometro">
-            <h2>M04-16</h2>
+        <div id="RC05-15" class="cronometro">
+            <h2>M03-16</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar60">Iniciar</button>
-            <button id="btnReiniciar60" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar15">Iniciar</button>
+            <button id="btnReiniciar15" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-61" class="cronometro">
-            <h2>M04-15</h2>
+        <div id="RC05-16" class="cronometro">
+            <h2>M03-15</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar61">Iniciar</button>
-            <button id="btnReiniciar61" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar16">Iniciar</button>
+            <button id="btnReiniciar16" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-62" class="cronometro">
-            <h2>M04-14</h2>
+        <div id="RC05-17" class="cronometro">
+            <h2>M03-14</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar62">Iniciar</button>
-            <button id="btnReiniciar62" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar17">Iniciar</button>
+            <button id="btnReiniciar17" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-63" class="cronometro">
-            <h2>M04-13</h2>
+        <div id="RC05-18" class="cronometro">
+            <h2>M03-13</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar63">Iniciar</button>
-            <button id="btnReiniciar63" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar18">Iniciar</button>
+            <button id="btnReiniciar18" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-64" class="cronometro">
-            <h2>M04-12</h2>
+        <div id="RC05-19" class="cronometro">
+            <h2>M03-12</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar64">Iniciar</button>
-            <button id="btnReiniciar64"class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar19">Iniciar</button>
+            <button id="btnReiniciar19" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-65" class="cronometro">
-            <h2>M04-11</h2>
+        <div id="RC05-20" class="cronometro">
+            <h2>M03-11</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar65">Iniciar</button>
-            <button id="btnReiniciar65" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar20">Iniciar</button>
+            <button id="btnReiniciar20" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-66" class="cronometro">
-            <h2>M04-10</h2>
+        <!-- RC05-21 -->
+        <div id="RC05-21" class="cronometro">
+            <h2>M03-10</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar66">Iniciar</button>
-            <button id="btnReiniciar66" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar21">Iniciar</button>
+            <button id="btnReiniciar21" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-67" class="cronometro">
-            <h2>M04-09</h2>
+
+        <!-- RC05-22 -->
+        <div id="RC05-22" class="cronometro">
+            <h2>M03-09</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar67">Iniciar</button>
-            <button id="btnReiniciar67" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar22">Iniciar</button>
+            <button id="btnReiniciar22" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-68" class="cronometro">
-            <h2>M04-08</h2>
+
+        <!-- RC05-23 -->
+        <div id="RC05-23" class="cronometro">
+            <h2>M03-08</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar68">Iniciar</button>
-            <button id="btnReiniciar68" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar23">Iniciar</button>
+            <button id="btnReiniciar23" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-69" class="cronometro">
-            <h2>M04-07</h2>
+
+        <!-- RC05-24 -->
+        <div id="RC05-24" class="cronometro">
+            <h2>M03-07</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar69">Iniciar</button>
-            <button id="btnReiniciar69" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar24">Iniciar</button>
+            <button id="btnReiniciar24" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-70" class="cronometro">
-            <h2>M04-06</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar70">Iniciar</button>
-            <button id="btnReiniciar70" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-71" class="cronometro">
-            <h2>M04-05</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar71">Iniciar</button>
-            <button id="btnReiniciar71" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-72" class="cronometro">
-            <h2>M04-04</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar72">Iniciar</button>
-            <button id="btnReiniciar72" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-73" class="cronometro">
-            <h2>M04-03</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar73">Iniciar</button>
-            <button id="btnReiniciar73" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-74" class="cronometro">
-            <h2>M04-02</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar74">Iniciar</button>
-            <button id="btnReiniciar74" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-75" class="cronometro">
-            <h2>M04-01</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar75">Iniciar</button>
-            <button id="btnReiniciar75" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-76" class="cronometro">
-            <h2>M05-01</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar76">Iniciar</button>
-            <button id="btnReiniciar76" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-77" class="cronometro">
-            <h2>M05-02</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar77">Iniciar</button>
-            <button id="btnReiniciar77" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-78" class="cronometro">
-            <h2>J&T</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar78">Iniciar</button>
-            <button id="btnReiniciar78" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-79" class="cronometro">
-            <h2>J&T</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar79">Iniciar</button>
-            <button id="btnReiniciar79" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-80" class="cronometro">
-            <h2>IMILE</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar80">Iniciar</button>
-            <button id="btnReiniciar80" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-81" class="cronometro">
-            <h2>SPLOG</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar81">Iniciar</button>
-            <button id="btnReiniciar81" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-82" class="cronometro">
-            <h2>M03-01</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar82">Iniciar</button>
-            <button id="btnReiniciar82" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-83" class="cronometro">
-            <h2>M03-02</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar83">Iniciar</button>
-            <button id="btnReiniciar83" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-84" class="cronometro">
-            <h2>M03-03</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar84">Iniciar</button>
-            <button id="btnReiniciar84" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-85" class="cronometro">
-            <h2>M03-04</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar85">Iniciar</button>
-            <button id="btnReiniciar85" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-86" class="cronometro">
-            <h2>M03-05</h2>
-            <p class="tempo">01:00:00</p>
-            <button id="btnIniciar86">Iniciar</button>
-            <button id="btnReiniciar86" class="reiniciar">Reiniciar</button>
-        </div>
-        <div id="RC05-87" class="cronometro">
+
+        <!-- RC05-25 -->
+        <div id="RC05-25" class="cronometro">
             <h2>M03-06</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar87">Iniciar</button>
-            <button id="btnReiniciar87" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar25">Iniciar</button>
+            <button id="btnReiniciar25" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-88" class="cronometro">
+
+        <!-- RC05-26 -->
+        <div id="RC05-26" class="cronometro">
+            <h2>M03-05</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar26">Iniciar</button>
+            <button id="btnReiniciar26" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-27 -->
+        <div id="RC05-27" class="cronometro">
+            <h2>M03-04</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar27">Iniciar</button>
+            <button id="btnReiniciar27" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-28 -->
+        <div id="RC05-28" class="cronometro">
+            <h2>M03-03</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar28">Iniciar</button>
+            <button id="btnReiniciar28" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-29 -->
+        <div id="RC05-29" class="cronometro">
+            <h2>M03-02</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar29">Iniciar</button>
+            <button id="btnReiniciar29" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-30 -->
+        <div id="RC05-30" class="cronometro">
+            <h2>M03-01</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar30">Iniciar</button>
+            <button id="btnReiniciar30" class="reiniciar">Reiniciar</button>
+        </div>
+        <!-- RC05-31 -->
+        <div id="RC05-31" class="cronometro">
+            <h2>M05-01</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar31">Iniciar</button>
+            <button id="btnReiniciar31" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-32 -->
+        <div id="RC05-32" class="cronometro">
+            <h2>M05-02</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar32">Iniciar</button>
+            <button id="btnReiniciar32" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-33 -->
+        <div id="RC05-33" class="cronometro">
+            <h2>J&T</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar33">Iniciar</button>
+            <button id="btnReiniciar33" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-34 -->
+        <div id="RC05-34" class="cronometro">
+            <h2>J&T</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar34">Iniciar</button>
+            <button id="btnReiniciar34" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-35 -->
+        <div id="RC05-35" class="cronometro">
+            <h2>IMILE</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar35">Iniciar</button>
+            <button id="btnReiniciar35" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-36 -->
+        <div id="RC05-36" class="cronometro">
+            <h2>SPLOG</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar36">Iniciar</button>
+            <button id="btnReiniciar36" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-37 -->
+        <div id="RC05-37" class="cronometro">
+            <h2>M03-01</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar37">Iniciar</button>
+            <button id="btnReiniciar37" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-38 -->
+        <div id="RC05-38" class="cronometro">
+            <h2>M03-02</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar38">Iniciar</button>
+            <button id="btnReiniciar38" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-39 -->
+        <div id="RC05-39" class="cronometro">
+            <h2>M03-03</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar39">Iniciar</button>
+            <button id="btnReiniciar39" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-40 -->
+        <div id="RC05-40" class="cronometro">
+            <h2>M03-04</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar40">Iniciar</button>
+            <button id="btnReiniciar40" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-41 -->
+        <div id="RC05-41" class="cronometro">
+            <h2>M03-05</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar41">Iniciar</button>
+            <button id="btnReiniciar41" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-42 -->
+        <div id="RC05-42" class="cronometro">
+            <h2>M03-06</h2>
+            <p class="tempo">01:00:00</p>
+            <button id="btnIniciar42">Iniciar</button>
+            <button id="btnReiniciar42" class="reiniciar">Reiniciar</button>
+        </div>
+
+        <!-- RC05-43 -->
+        <div id="RC05-43" class="cronometro">
             <h2>CANCELADO</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar88">Iniciar</button>
-            <button id="btnReiniciar88" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar43">Iniciar</button>
+            <button id="btnReiniciar43" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-89" class="cronometro">
+
+        <!-- RC05-44 -->
+        <div id="RC05-44" class="cronometro">
             <h2>ERRO</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar89">Iniciar</button>
-            <button id="btnReiniciar89" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar44">Iniciar</button>
+            <button id="btnReiniciar44" class="reiniciar">Reiniciar</button>
         </div>
-        <div id="RC05-90" class="cronometro">
+
+        <!-- RC05-45 -->
+        <div id="RC05-45" class="cronometro">
             <h2>PESO</h2>
             <p class="tempo">01:00:00</p>
-            <button id="btnIniciar90">Iniciar</button>
-            <button id="btnReiniciar90" class="reiniciar">Reiniciar</button>
+            <button id="btnIniciar45">Iniciar</button>
+            <button id="btnReiniciar45" class="reiniciar">Reiniciar</button>
         </div>
     </div>
 
