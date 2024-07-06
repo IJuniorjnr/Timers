@@ -1,5 +1,5 @@
 // Constantes
-const TEMPO_PADRAO = 11;
+const TEMPO_PADRAO = 10;
 const PREFIXO_ID = document.body.getAttribute('data-prefixo');
 const NUM_CRONOMETROS = 45;
 
@@ -188,6 +188,7 @@ class Cronometro {
 document.addEventListener("DOMContentLoaded", () => {
     const cronometros = [];
     const container = document.querySelector('.container');
+    let modoVisualizacao = 'mostrarTodos';
 
     for (let i = 1; i <= NUM_CRONOMETROS; i++) {
         const cronometroId = `${PREFIXO_ID}-${i.toString().padStart(2, '0')}`;
@@ -215,9 +216,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function ordenarEAtualizarCronometros() {
-        Cronometro.ordenarCronometros(cronometros);
+        const cronometrosVisiveis = cronometros.filter((_, index) => 
+            (modoVisualizacao === 'mostrarTodos') ||
+            (modoVisualizacao === 'mostrarPrimeiras21' && index < 21) ||
+            (modoVisualizacao === 'mostrarRestantes' && index >= 21)
+        );
+        
+        Cronometro.ordenarCronometros(cronometrosVisiveis);
+        
         container.innerHTML = '';
-        cronometros.forEach(cronometro => container.appendChild(cronometro.element));
+        cronometrosVisiveis.forEach(cronometro => container.appendChild(cronometro.element));
     }
 
     function verificarCronometrosOvertime() {
@@ -233,12 +241,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function atualizarVisibilidade(modo) {
+        modoVisualizacao = modo;
         cronometros.forEach((cronometro, index) => {
             const visivel = (modo === 'mostrarTodos') ||
                             (modo === 'mostrarPrimeiras21' && index < 21) ||
                             (modo === 'mostrarRestantes' && index >= 21);
             cronometro.element.style.display = visivel ? 'inline-block' : 'none';
         });
+        ordenarEAtualizarCronometros();
     }
 
     // Adiciona um event listener para qualquer clique na página
