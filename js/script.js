@@ -1,5 +1,5 @@
 // Constantes
-const TEMPO_PADRAO = 10;
+const TEMPO_PADRAO = 3600;
 const PREFIXO_ID = document.body.getAttribute('data-prefixo');
 const NUM_CRONOMETROS = 45;
 
