@@ -94,6 +94,20 @@ class Cronometro {
         localStorage.removeItem(`${this.element.id}-tempoInicial`);
         localStorage.removeItem(`${this.element.id}-timestamp`);
         this.stopAlarmSound();
+        this.iniciar(); // Inicia o cronômetro automaticamente após o reset
+    }
+
+    resetarSemIniciar() {
+        this.parar();
+        this.tempoInicial = TEMPO_PADRAO;
+        this.tempo = TEMPO_PADRAO;
+        this.overtime = 0;
+        this.timestamp = null;
+        this.alarmTriggered = false;
+        this.atualizarInterface();
+        localStorage.removeItem(`${this.element.id}-tempoInicial`);
+        localStorage.removeItem(`${this.element.id}-timestamp`);
+        this.stopAlarmSound();
     }
 
     atualizarInterface() {
@@ -210,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('btnResetarTodos').addEventListener('click', () => {
         showModal("Deseja realmente reiniciar todos os cronômetros?", () => {
-            cronometros.forEach(cronometro => cronometro.resetar());
+            cronometros.forEach(cronometro => cronometro.resetarSemIniciar());
             verificarCronometrosOvertime();
         });
     });
